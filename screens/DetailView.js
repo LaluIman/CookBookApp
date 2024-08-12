@@ -37,6 +37,7 @@ const DetailView = ({ route }) => {
                     <Text style={styles.ingredient}>{ingredient}</Text>
                   </View>
                 ))}
+                <Divider style={{ paddingVertical: 10 }}/>
                 <Text style={styles.header}>Instructions</Text>
                 {recipe.instructions.map((instruction, index) => (
                   <View key={index} style={styles.instructionContainer}>
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
     opacity: 0.9,
     borderRadius: 50, 
     padding: 10,
+    border: 1,
   },
   image: {
     width: '100%',
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
   },
   instruction: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
   },
   finish:{
     fontSize: 30,

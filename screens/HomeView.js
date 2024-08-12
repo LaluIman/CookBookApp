@@ -1,41 +1,63 @@
-import React from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import recipes from '../data/recipe';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const image = require('../assets/gradient.png');
 
 const HomeView = ({ navigation }) => {
-    return (
-      <View style={styles.container}>
-        <ImageBackground source={image} resizeMode='stretch' style={styles.bgimage}>
-          <FlatList 
-            data={recipes}
-            keyExtractor={(item) => item.id.toString()}
-            ListHeaderComponent={() => (
-              <Text style={styles.header}>Cook Book</Text>
-            )}
-            contentContainerStyle={styles.cardContainer}
-            renderItem={({ item }) => (
-              <TouchableOpacity onPress={() => navigation.navigate('Detail', { recipe: item })}>
-                <View style={styles.card}>
-                  <Image source={{ uri: item.image }} style={styles.image} />
-                  <View style={styles.textContainer}>
-                    <Text style={styles.name}>{item.name}</Text>
-                    <Text style={styles.type}>{item.type}</Text>
-                    <View style={styles.timetc}>
-                      <Text style={styles.timeToCook}>{item.timeToCook}</Text>
-                      <FontAwesomeIcon style={styles.clock} icon={faClock} />
-                    </View>
+  const [search, setSearch] = useState('');
+  const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+
+  const handleSearch = (text) => {
+    setSearch(text);
+    if (text) {
+      const filtered = recipes.filter((item) => item.name.toLowerCase().includes(text.toLowerCase()));
+      setFilteredRecipes(filtered);
+    } else {
+      setFilteredRecipes(recipes);
+    }
+  };
+
+  return (
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <ImageBackground source={image} resizeMode='stretch' style={styles.bgimage}>
+        <View style={styles.headerContainer}>
+          <Text style={styles.header}>Cook Book</Text>
+          <View style={styles.searchInput}>
+            <FontAwesomeIcon icon={faSearch} style={styles.searchIcon} />
+            <TextInput
+              placeholder="Search Recipes..."
+              value={search}
+              onChangeText={handleSearch}
+            />
+          </View>
+        </View>
+        <FlatList 
+          data={filteredRecipes}
+          keyExtractor={(item) => item.id.toString()}
+          contentContainerStyle={styles.cardContainer}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => navigation.navigate('Detail', { recipe: item })}>
+              <View style={styles.card}>
+                <Image source={{ uri: item.image }} style={styles.image} />
+                <View style={styles.textContainer}>
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.type}>{item.type}</Text>
+                  <View style={styles.timetc}>
+                    <Text style={styles.timeToCook}>{item.timeToCook}</Text>
+                    <FontAwesomeIcon style={styles.clock} icon={faClock} />
                   </View>
                 </View>
-              </TouchableOpacity>
-            )}
-          />
-        </ImageBackground>  
-      </View>
-    );
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      </ImageBackground>  
+    </KeyboardAvoidingView>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -44,11 +66,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#eeee",
     width: '100%',
   },
+  headerContainer: {
+    paddingHorizontal: 30,
+    paddingTop: 50,
+    paddingBottom: 20,
+  },
   header: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 50,
-    paddingVertical: 20
+    marginBottom: 20,
   },
   bgimage: {
     flex: 1,
@@ -56,9 +82,22 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%', 
   },
+  searchInput: {
+    flexDirection: 'row',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    width: '100%',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    fontSize: 15,
+    fontWeight: '500'
+  },
+  searchIcon: {
+    margin: 5,
+    color: '#888',
+  },
   cardContainer: {
     paddingHorizontal: 30,
-    paddingTop: 20,
   },
   card: {
     flexDirection: 'row',
@@ -66,8 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     overflow: 'hidden',
-    elevation: 3,
-    padding: 10
+    padding: 10,
   },
   image: {
     width: 90,
@@ -86,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#888',
     paddingVertical: 5,
-    fontWeight: '700'
+    fontWeight: '700',
   },
   timetc: {
     flexDirection: 'row',
@@ -95,8 +133,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   clock: {
-    paddingHorizontal: 15
-  }
+    paddingHorizontal: 15,
+  },
 });
 
 export default HomeView;

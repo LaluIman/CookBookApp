@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CookBookApp",
-    "slug": "CookBookApp",
+    "name": "Cook Book",
+    "slug": "Cook Book",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/Recipelogo.png",
