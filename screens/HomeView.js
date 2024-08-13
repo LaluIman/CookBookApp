@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faClock } from '@fortawesome/free-regular-svg-icons';
+import {faClock, faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import recipes from '../data/recipe';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FavoritesContext } from '../Favoritecontext';
 
 const image = require('../assets/gradient.png');
 
 const HomeView = ({ navigation }) => {
   const [search, setSearch] = useState('');
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
 
   const handleSearch = (text) => {
     setSearch(text);
@@ -19,6 +22,10 @@ const HomeView = ({ navigation }) => {
     } else {
       setFilteredRecipes(recipes);
     }
+  };
+
+  const isFavorite = (recipe) => {
+    return favorites.some(item => item.id === recipe.id);
   };
 
   return (
@@ -44,7 +51,15 @@ const HomeView = ({ navigation }) => {
               <View style={styles.card}>
                 <Image source={{ uri: item.image }} style={styles.image} />
                 <View style={styles.textContainer}>
+                  <View style={styles.topCard}>
                   <Text style={styles.name}>{item.name}</Text>
+                  <TouchableOpacity onPress={() => toggleFavorite(item)}>
+                    <FontAwesomeIcon 
+                      icon={isFavorite(item) ? faStarSolid : faStarRegular} 
+                      style={{ color: isFavorite(item) ? 'yellow' : '#ccc', fontSize: 24 }} 
+                    />
+                  </TouchableOpacity>
+                  </View>
                   <Text style={styles.type}>{item.type}</Text>
                   <View style={styles.timetc}>
                     <Text style={styles.timeToCook}>{item.timeToCook}</Text>
@@ -68,7 +83,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     paddingHorizontal: 30,
-    paddingTop: 50,
+    marginTop: 100,
     paddingBottom: 20,
   },
   header: {
@@ -106,6 +121,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     padding: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   image: {
     width: 90,
@@ -115,6 +132,10 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     paddingHorizontal: 10,
+  },
+  topCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   name: {
     fontSize: 18,
