@@ -20,7 +20,7 @@ const DetailView = ({ route }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <FontAwesomeIcon icon={faChevronLeft} />
+        <FontAwesomeIcon icon={faChevronLeft} style={{ color: '#fff'}} />
       </TouchableOpacity>
       <ScrollView style={styles.scrollView}>
         <Image source={{ uri: recipe.image }} style={styles.image} />
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
     top: 60,
     left: 20,
     zIndex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#888',
     opacity: 0.9,
-    borderRadius: 50,
+    borderRadius: 10,
     padding: 10,
     border: 1,
   },
