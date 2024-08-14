@@ -15,10 +15,9 @@ function CustomTabBar({ state, descriptors, navigation }) {
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      paddingBottom: 20,
+      paddingBottom: 15,
       borderRadius: 30,
       margin: 10,
-      elevation: 10,
     }}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
@@ -59,6 +58,7 @@ function CustomTabBar({ state, descriptors, navigation }) {
               borderRadius: 15,
               padding: isFocused ? 10 : 10,
               flexDirection: 'row',
+              elevation: 1
             }}
             key={index}
           >
