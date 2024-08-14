@@ -56,7 +56,7 @@ const HomeView = ({ navigation }) => {
                   <TouchableOpacity onPress={() => toggleFavorite(item)}>
                     <FontAwesomeIcon 
                       icon={isFavorite(item) ? faStarSolid : faStarRegular} 
-                      style={{ color: isFavorite(item) ? 'yellow' : '#ccc', fontSize: 24 }} 
+                      style={{ color: isFavorite(item) ? '#fac70f' : '#ccc', fontSize: 24 }} 
                     />
                   </TouchableOpacity>
                   </View>

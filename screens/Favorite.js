@@ -24,12 +24,12 @@ const FavoriteView = ({ navigation }) => {
             <View style={styles.card}>
               <Image source={{ uri: item.image }} style={styles.image} />
               <View style={styles.textContainer}>
-                <View style={styles.cardTop}>
+                <View style={styles.topCard}>
                   <Text style={styles.name}>{item.name}</Text>
                   <TouchableOpacity onPress={() => toggleFavorite(item)}>
                     <FontAwesomeIcon 
                       icon={faStarSolid} 
-                      style={{ color: 'yellow', fontSize: 24 }} 
+                      style={{ color: '#fac70f', fontSize: 24 }} 
                     />
                   </TouchableOpacity>
                 </View>
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
     marginVertical: 100
   },
+  cardContainer: {
+    paddingHorizontal: 30,
+  },
   card: {
     flexDirection: 'row',
     marginBottom: 16,
@@ -73,21 +76,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     padding: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   image: {
     width: 90,
     height: 75,
     borderRadius: 8,
   },
-  cardTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   textContainer: {
     flex: 1,
     paddingHorizontal: 10,
-    flexDirection: 'column',
-    alignItems: 'start',
+  },
+  topCard: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
   },
   name: {
@@ -97,9 +99,17 @@ const styles = StyleSheet.create({
   type: {
     fontSize: 15,
     color: '#888',
+    paddingVertical: 5,
+    fontWeight: '700',
   },
-  favoriteIcon: {
-    color: 'yellow',
+  timetc: {
+    flexDirection: 'row',
+  },
+  timeToCook: {
+    fontSize: 14,
+  },
+  clock: {
+    paddingHorizontal: 15,
   },
 });
 
