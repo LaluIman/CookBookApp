@@ -31,7 +31,7 @@ const DetailView = ({ route }) => {
               <TouchableOpacity onPress={() => toggleFavorite(recipe)}>
                 <FontAwesomeIcon 
                   icon={isFavorite ? faStarSolid : faStarRegular} 
-                  style={{ color: isFavorite ? '#fac70f' : '#ccc' , fontSize: 50,}} 
+                  style={{ color: isFavorite ? '#fac70f' : '#ccc' , fontSize: 50,}}
                 />
               </TouchableOpacity>
             </View>
@@ -59,14 +59,15 @@ const DetailView = ({ route }) => {
                 <Text style={styles.instruction}>{instruction}</Text>
               </View>
             ))}
-            <Text style={styles.finish}>Bon appetit 🍽️</Text>
+            <TouchableOpacity style={styles.finishButton} onPress={() => navigation.navigate('FinishView')}>
+              <Text style={styles.finishButtonText}>Finish</Text>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
       </ScrollView>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -182,6 +183,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     color: '#1DCA69',
+  },
+  finishButton: {
+    backgroundColor: '#1DCA69',
+    padding: 16,
+    borderRadius: 10,
+    marginVertical: 20,
+  },
+  finishButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
   },
 });
 

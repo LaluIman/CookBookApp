@@ -56,7 +56,7 @@ const HomeView = ({ navigation }) => {
                   <TouchableOpacity onPress={() => toggleFavorite(item)}>
                     <FontAwesomeIcon 
                       icon={isFavorite(item) ? faStarSolid : faStarRegular} 
-                      style={{ color: isFavorite(item) ? '#fac70f' : '#ccc', fontSize: 24 }} 
+                      style={{ color: isFavorite(item) ? '#fac70f' : '#ccc', fontSize: 50 }} 
                     />
                   </TouchableOpacity>
                   </View>
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     paddingHorizontal: 30,
-    marginTop: 100,
+    marginTop: 70,
     paddingBottom: 20,
   },
   header: {
@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   name: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
   },
   type: {
     fontSize: 15,
     color: '#888',
     paddingVertical: 5,
-    fontWeight: '700',
+    fontWeight: '500',
   },
   timetc: {
     flexDirection: 'row',

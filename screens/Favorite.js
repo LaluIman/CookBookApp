@@ -14,39 +14,47 @@ const FavoriteView = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <BackgroundImage  source={image} resizeMode='stretch' style={styles.bgimage}>
-      <Text style={styles.header}>Favorites</Text>
-      <FlatList 
-        data={favorites}
-        keyExtractor={(item) => item.id.toString()}
-        contentContainerStyle={styles.cardContainer}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('Detail', { recipe: item })}>
-            <View style={styles.card}>
-              <Image source={{ uri: item.image }} style={styles.image} />
-              <View style={styles.textContainer}>
-                <View style={styles.topCard}>
-                  <Text style={styles.name}>{item.name}</Text>
-                  <TouchableOpacity onPress={() => toggleFavorite(item)}>
-                    <FontAwesomeIcon 
-                      icon={faStarSolid} 
-                      style={{ color: '#fac70f', fontSize: 24 }} 
-                    />
-                  </TouchableOpacity>
+        <Text style={styles.header}>Favorites</Text>
+        {favorites.length === 0 ? (
+          <View style={styles.noFavContainer}>
+            <Text style={styles.noFav}>🙅</Text>
+            <Text style={styles.noFavText}>No favorites</Text>
+          </View>
+        ) : (
+          <FlatList 
+            data={favorites}
+            keyExtractor={(item) => item.id.toString()}
+            contentContainerStyle={styles.cardContainer}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => navigation.navigate('Detail', { recipe: item })}>
+                <View style={styles.card}>
+                  <Image source={{ uri: item.image }} style={styles.image} />
+                  <View style={styles.textContainer}>
+                    <View style={styles.topCard}>
+                      <Text style={styles.name}>{item.name}</Text>
+                      <TouchableOpacity onPress={() => toggleFavorite(item)}>
+                        <FontAwesomeIcon 
+                          icon={faStarSolid} 
+                          style={{ color: '#fac70f', fontSize: 50 }} 
+                        />
+                      </TouchableOpacity>
+                    </View>
+                    <Text style={styles.type}>{item.type}</Text>
+                    <View style={styles.timetc}>
+                      <Text style={styles.timeToCook}>{item.timeToCook}</Text>
+                      <FontAwesomeIcon style={styles.clock} icon={faClock} />
+                    </View>
+                  </View>
                 </View>
-                <Text style={styles.type}>{item.type}</Text>
-                <View style={styles.timetc}>
-                  <Text style={styles.timeToCook}>{item.timeToCook}</Text>
-                  <FontAwesomeIcon style={styles.clock} icon={faClock} />
-                </View>
-              </View>
-            </View>
-          </TouchableOpacity>
+              </TouchableOpacity>
+            )}
+          />
         )}
-      />
       </BackgroundImage>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -63,8 +71,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
-    marginHorizontal: 50,
-    marginVertical: 100
+    paddingHorizontal: 30,
+    marginTop: 70,
   },
   cardContainer: {
     paddingHorizontal: 30,
@@ -93,14 +101,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   name: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
   },
   type: {
     fontSize: 15,
     color: '#888',
     paddingVertical: 5,
-    fontWeight: '700',
+    fontWeight: '500',
   },
   timetc: {
     flexDirection: 'row',
@@ -111,6 +119,20 @@ const styles = StyleSheet.create({
   clock: {
     paddingHorizontal: 15,
   },
+  noFavContainer:{
+    flex:1,
+    justifyContent: "center", 
+    alignItems: "center", 
+    flexDirection: 'column',
+  },
+  noFav:{
+    fontSize: 70,
+  },
+  noFavText:{
+    fontSize: 20,
+    marginVertical: 10,
+    fontWeight: '800'
+  }
 });
 
 export default FavoriteView;

@@ -13,7 +13,7 @@ function CustomTabBar({ state, descriptors, navigation }) {
   return (
     <View style={{
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
       alignItems: 'center',
       paddingBottom: 15,
       borderRadius: 30,
@@ -30,7 +30,7 @@ function CustomTabBar({ state, descriptors, navigation }) {
         const isFocused = state.index === index;
 
         let iconName = route.name === 'Home' ? 'home' : 'heart';
-        let solid = route.name === 'Favorite' && isFocused;
+        let solid = route.name === 'Favorites' && isFocused;
 
         const onPress = () => {
           const event = navigation.emit({
@@ -58,13 +58,13 @@ function CustomTabBar({ state, descriptors, navigation }) {
               borderRadius: 15,
               padding: isFocused ? 10 : 10,
               flexDirection: 'row',
-              elevation: 1
+              marginHorizontal: 10,
             }}
             key={index}
           >
             <FontAwesome5 name={iconName} size={20} color={isFocused ? '#1DCA69' : 'gray'} solid={solid} />
             {isFocused && (
-              <Text style={{ color: 'black', marginLeft: 8, fontWeight: '400' }}>{label}</Text>
+              <Text style={{ color: 'black', marginLeft: 8, fontWeight: '600' }}>{label}</Text>
             )}
           </TouchableOpacity>
         );
@@ -81,7 +81,7 @@ export default function App() {
           tabBar={(props) => <CustomTabBar {...props} />}
         >
           <Tab.Screen name="Home" component={AppNavigator} options={{ headerShown: false }} />
-          <Tab.Screen name="Favorite" component={FavoriteView} options={{ headerShown: false }} />
+          <Tab.Screen name="Favorites" component={FavoriteView} options={{ headerShown: false }} />
         </Tab.Navigator>
       </NavigationContainer>
     </FavoritesProvider>
