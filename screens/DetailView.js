@@ -78,11 +78,12 @@ const styles = StyleSheet.create({
     top: 60,
     left: 20,
     zIndex: 1,
-    backgroundColor: '#888',
+    backgroundColor: '#1DCA69',
     opacity: 0.9,
     borderRadius: 10,
     padding: 10,
     border: 1,
+    fontWeight: '800'
   },
   image: {
     width: '100%',

@@ -130,7 +130,7 @@ const recipes = [
   },
   {
     id: 9,
-    image: 'https://www.jessicagavin.com/wp-content/uploads/2023/03/fettuccine-alfredo-12-1200.jpg',
+    image: 'https://www.modernhoney.com/wp-content/uploads/2018/08/Fettuccine-Alfredo-Recipe-1.jpg',
     name: 'Fettuccine Alfredo',
     ingredients: ['🍝 Fettuccine', '🧈 Butter', '🧄 Garlic', '🥛 Heavy cream', '🧀 Parmesan cheese'],
     timeToCook: '25 mins',
@@ -146,7 +146,7 @@ const recipes = [
   },
   {
     id: 10,
-    image: 'https://cdn.tasteatlas.com/images/dishes/893703cf36f8488eb54d80a7e4bfcf9e.jpg?w=905&h=510',
+    image: 'https://cdn0-production-images-kly.akamaized.net/l_cAPXANBSWUd7EyiyLVpYOuIXo=/257x0:924x667/1200x1200/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4096407/original/041706500_1658396793-shutterstock_1922162588.jpg',
     name: 'Tom Yum Soup',
     ingredients: ['🍤 Shrimp', '🥣 Chicken broth', '🥥 Coconut milk', '🌶️ Thai chili', '🧄 Garlic', '🍋 Lemongrass', '🫛 Mushrooms'],
     timeToCook: '40 mins',
@@ -160,10 +160,9 @@ const recipes = [
       'Serve the Tom Yum Soup hot, garnished with cilantro and additional lime wedges.'
     ],
   },
-  // New 20 recipes...
   {
     id: 11,
-    image: 'https://asset.kompas.com/crops/dEGKFeCsgAduGCTurSbqX1r5kK4=/0x0:800x533/750x500/data/photo/2022/06/07/62aecd2034d23.jpg',
+    image: 'https://img.kurio.network/dDM1rM5BiYxMh_WKROA5pPHr1v8=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/10/12/22d8038d-e873-4660-8637-00787fcffba6.jpe',
     name: 'Nasi Goreng',
     ingredients: ['🍚 Cooked rice', '🥚 Eggs', '🧄 Garlic', '🌶️ Chili', '🥓 Chicken or shrimp', '🧂 Soy sauce'],
     timeToCook: '20 mins',
@@ -179,7 +178,7 @@ const recipes = [
   },
   {
     id: 12,
-    image: 'https://img-global.cpcdn.com/recipes/022e54510d4d61c2/1200x630cq70/photo.jpg',
+    image: 'https://allofresh.id/blog/wp-content/uploads/2023/09/cara-membuat-mie-goreng-4-1-scaled.jpg',
     name: 'Mie Goreng',
     ingredients: ['🍝 Egg noodles', '🧄 Garlic', '🌶️ Chili', '🥚 Eggs', '🥬 Bok choy', '🧂 Sweet soy sauce'],
     timeToCook: '25 mins',
@@ -195,7 +194,7 @@ const recipes = [
   },
   {
     id: 13,
-    image: 'https://www.unileverfoodsolutions.co.id/dam/global-ufs/mcos/sea/calcmenu/recipes/ID-recipes/soup-&-stews/soto-betawi/main-header.jpg',
+    image: 'https://www.unileverfoodsolutions.co.id/dam/global-ufs/mcos/SEA/calcmenu/recipes/ID-recipes/soups/soto-betawi/main-header.jpg',
     name: 'Soto Betawi',
     ingredients: ['🥩 Beef', '🥥 Coconut milk', '🍋 Lemongrass', '🧄 Garlic', '🧅 Onions', '🥔 Potatoes', '🍅 Tomatoes'],
     timeToCook: '1 hour 30 mins',
@@ -211,7 +210,7 @@ const recipes = [
   },
   {
     id: 14,
-    image: 'https://www.feastingathome.com/wp-content/uploads/2022/12/Avgolemono-Soup-7.jpg',
+    image: 'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2022/09/Avgolemono-Soup-main-1.jpg',
     name: 'Avgolemono Soup',
     ingredients: ['🐓 Chicken', '🍚 Rice', '🥚 Eggs', '🍋 Lemon', '🥣 Chicken broth'],
     timeToCook: '45 mins',
@@ -227,7 +226,7 @@ const recipes = [
   },
   {
     id: 15,
-    image: 'https://www.veganricha.com/wp-content/uploads/2022/12/vegan-tacos-blog-Vegan-Richa-9864.jpg',
+    image: 'https://www.twopeasandtheirpod.com/wp-content/uploads/2021/06/Veggie-Tacos4577.jpg',
     name: 'Vegan Tacos',
     ingredients: ['🌮 Tortillas', '🥑 Avocado', '🌽 Corn', '🍅 Tomatoes', '🥬 Lettuce', '🫘 Black beans'],
     timeToCook: '30 mins',
@@ -242,7 +241,7 @@ const recipes = [
   },
   {
     id: 16,
-    image: 'https://www.africanbites.com/wp-content/uploads/2017/08/Jollof-Rice-7.jpg',
+    image: 'https://cdn.jwplayer.com/v2/media/BRU94itM/poster.jpg?width=720+',
     name: 'Jollof Rice',
     ingredients: ['🍚 Rice', '🍅 Tomatoes', '🌶️ Chili', '🧄 Garlic', '🧅 Onions', '🥩 Meat or fish'],
     timeToCook: '1 hour',
@@ -258,7 +257,7 @@ const recipes = [
   },
   {
     id: 17,
-    image: 'https://www.thespruceeats.com/thmb/E2FGC9RsD2dOmkPpNiQOxuZnTHA=/4032x3024/filters:no_upscale()/shakshuka-poached-eggs-in-tomato-sauce-5749193-hero-01-6b08f16bcf3f429d85ab99a6b87b8f9b.jpg',
+    image: 'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/12/Shakshuka-main-1.jpg',
     name: 'Shakshuka',
     ingredients: ['🥚 Eggs', '🍅 Tomatoes', '🧅 Onions', '🧄 Garlic', '🌶️ Chili', '🧂 Spices (cumin, paprika)'],
     timeToCook: '30 mins',
@@ -273,7 +272,7 @@ const recipes = [
   },
   {
     id: 18,
-    image: 'https://www.wholesomeyum.com/wp-content/uploads/2020/08/wholesomeyum-Caesar-Salad-Recipe-12.jpg',
+    image: 'https://natashaskitchen.com/wp-content/uploads/2019/01/Caesar-Salad-Recipe-3.jpg',
     name: 'Caesar Salad',
     ingredients: ['🥗 Romaine lettuce', '🍞 Croutons', '🧀 Parmesan cheese', '🐟 Anchovies', '🧄 Garlic', '🍋 Lemon', '🥚 Egg yolk', '🧂 Olive oil'],
     timeToCook: '20 mins',
@@ -288,7 +287,7 @@ const recipes = [
   },
   {
     id: 19,
-    image: 'https://www.simplyrecipes.com/thmb/qbHp9MabM_MmDQGldM5eLwK66Wc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Classic-Peanut-Butter-Cookies-LEAD-01-869e20a5d5ae48a297dffbb5cbb38c3c.jpg',
+    image: 'https://sallysbakingaddiction.com/wp-content/uploads/2022/04/soft-and-thick-peanut-butter-cookies-2-320x180.jpg',
     name: 'Peanut Butter Cookies',
     ingredients: ['🥜 Peanut butter', '🧈 Butter', '🍬 Sugar', '🥚 Egg', '🥄 Vanilla extract', '🥣 Flour', '🧂 Baking soda', '🧂 Salt'],
     timeToCook: '35 mins',
@@ -306,7 +305,7 @@ const recipes = [
   },
   {
     id: 20,
-    image: 'https://www.inspiredtaste.net/wp-content/uploads/2020/08/Banana-Bread-Recipe-4-1200.jpg',
+    image: 'https://www.simplyrecipes.com/thmb/tR-5eHAZ3lgNR6Yvu3yxdHMNpk8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Easy-Banana-Bread-LEAD-2-2-63dd39af009945d58f5bf4c2ae8d6070.jpg',
     name: 'Banana Bread',
     ingredients: ['🍌 Ripe bananas', '🥚 Eggs', '🧈 Butter', '🍬 Sugar', '🥣 Flour', '🧂 Baking soda', '🧂 Salt', '🥛 Milk', '🥄 Vanilla extract'],
     timeToCook: '1 hour 15 mins',
